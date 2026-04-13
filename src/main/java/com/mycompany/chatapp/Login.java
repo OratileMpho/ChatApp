@@ -8,48 +8,23 @@ package com.mycompany.chatapp;
  *
  * @author lab_services_student
  */
-import java.util.Scanner; // import a scanner class
-
-
-
-Scanner input= new Scanner(System.in); // Creating object of a type scanner
 public class Login {
-    
-    Login Userlogin = new Login(); // creating object uderlogin of type login
-    
-    String username;
-    
-    
-    
-    
-    
-    
-    public boolean checkUsername(String username){
-    
-        if(username.contains("-")&& username.length() <=5){
-        
-        return true;
-        }else{
-        return false;
+
+    // Registers a user
+    public static String registerUser(String username, String password) {
+        boolean isUsernameValid = checkUsername(username);
+        boolean isPasswordValid = checkPasswordComplexity(password);
+
+        if (isUsernameValid && isPasswordValid) {
+            return "Registration is a success";
+
+        } else if (!isUsernameValid) {
+            return "Username is not correctly formatted, please ensure that the username contains an underscore and has 5 characters.";
+
+        } else {
+            return "Password is not correctly formatted, please ensure that the password contains at least 8 characters, a capital letter and a number.";
         }
-    
-  
     }
-    
-    Login login= new Login(); // creating object of login class
+
    
-    @Test
-    public void testCheckusername(){
-    
-     assertEquals(true,login.checkUserName("ora_"));
-    }
-    
-    
-    
-    @Test
-    public void testCheckuserNameWithoutUnderscore(){
-    
-    assertEquals(false,login.testCheckusername("username"));
-    
-    }
 }
