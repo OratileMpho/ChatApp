@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author lab_services_student
  */
-public class LoginTest {
+public class LoginTest {  
 
     // ----------- checkUsername Tests -----------
 
