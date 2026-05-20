@@ -9,7 +9,7 @@ package com.mycompany.chatapp;
  * @author lab_services_student
  */
 import java.util.Scanner;
-
+import java.util.Random;
 public class ChatApp {
 
     public static void main(String[] args) {
@@ -50,7 +50,8 @@ public class ChatApp {
             if (Login.checkPasswordComplexity(password)) {
                 System.out.println("Password successfully captured.");
                 break;
-            } else {
+            }else
+                    {
                 System.out.println("Invalid password format. Please ensure that your password contain a special character, a numuber and a capital letter :");
             }
         }
@@ -68,7 +69,7 @@ public class ChatApp {
                 
              
                 break;
-            } else {
+            }else{
                 System.out.println("Invalid phone number format.");
             }
         }
@@ -90,11 +91,68 @@ public class ChatApp {
                 System.out.println("Login successful!");
                 System.out.println("Welcome back, " + firstname + " " + lastname + "!");
                 break;
-            } else {
+            }else{
                 System.out.println("Login failed. Try again.\n");
             }
         }
 
-        input.close();
+        
+      // Part 2 poe where it deals with messages 
+      
+        //Login
+        // for authantication purposes 
+        boolean loggedIn = true;
+
+        if (!loggedIn) {
+            System.out.println("You must login first.");
+            return;
+        }
+
+        System.out.println("Welcome to QuickChat");
+
+        // Ask user how many messages they want to send
+        System.out.print("How many messages would you like to send? ");
+        int totalMessages = input.nextInt();
+        input.nextLine();
+
+        //ARRAYS ONLY
+        String[] messageIDs = new String[totalMessages];
+        String[] recipients = new String[totalMessages];
+        String[] messages = new String[totalMessages];
+
+        int sentMessages = 0;
+        int option = 0;
+
+        while (option != 3) {
+
+            System.out.println("\nMENU");
+            System.out.println("1. Send Messages");
+            System.out.println("2. Show recently sent messages");
+            System.out.println("3. Quit");
+
+            System.out.print("Choose option: ");
+            option = input.nextInt();
+            input.nextLine();
+
+           
+            }
+        }
+
+        
     }
-}
+
+
+        
+    
+
+
+       
+       
+       
+       
+       
+        
+      
+        
+        
+    
